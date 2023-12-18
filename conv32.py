@@ -122,13 +122,13 @@ c7 = Conv2D(128, (3, 3), activation='elu', kernel_initializer='he_normal', paddi
 c7 = Dropout(0.2) (c7)
 c7 = Conv2D(128, (3, 3), activation='elu', kernel_initializer='he_normal', padding='same') (c7)
 
-u8 = Conv2DTranspose(32, (2, 2), strides=(2, 2), padding='same') (c7)
+u8 = Conv2DTranspose(64, (2, 2), strides=(2, 2), padding='same') (c7)
 u8 = concatenate([u8, c2])
 c8 = Conv2D(64, (3, 3), activation='elu', kernel_initializer='he_normal', padding='same') (u8)
 c8 = Dropout(0.1) (c8)
 c8 = Conv2D(64, (3, 3), activation='elu', kernel_initializer='he_normal', padding='same') (c8)
 
-u9 = Conv2DTranspose(16, (2, 2), strides=(2, 2), padding='same') (c8)
+u9 = Conv2DTranspose(32, (2, 2), strides=(2, 2), padding='same') (c8)
 u9 = concatenate([u9, c1], axis=3)
 c9 = Conv2D(32, (3, 3), activation='elu', kernel_initializer='he_normal', padding='same') (u9)
 c9 = Dropout(0.1) (c9)
